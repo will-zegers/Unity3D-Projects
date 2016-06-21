@@ -1,0 +1,388 @@
+fileFormatVersion: 2
+guid: 5d96a49dbb2fc534695b8032cb4afd1b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: shipsheet_0
+    21300002: shipsheet_1
+    21300004: shipsheet_2
+    21300006: shipsheet_3
+    21300008: shipsheet_4
+    21300010: shipsheet_5
+    21300012: shipsheet_6
+    21300014: shipsheet_7
+    21300016: shipsheet_8
+    21300018: shipsheet_9
+    21300020: shipsheet_10
+    21300022: shipsheet_11
+    21300024: shipsheet_12
+    21300026: shipsheet_13
+    21300028: shipsheet_14
+    21300030: shipsheet_15
+    21300032: shipsheet_16
+    21300034: shipsheet_17
+    21300036: shipsheet_18
+    21300038: shipsheet_19
+    21300040: shipsheet_20
+    21300042: shipsheet_21
+    21300044: shipsheet_22
+    21300046: shipsheet_23
+    21300048: shipsheet_24
+    21300050: shipsheet_25
+    21300052: shipsheet_26
+    21300054: shipsheet_27
+    21300056: shipsheet_28
+    21300058: shipsheet_29
+    21300060: shipsheet_30
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: shipsheet_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 515
+        width: 62
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 509
+        width: 58
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 510
+        width: 67
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_3
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 516
+        width: 56
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_4
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 515
+        width: 60
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_5
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 510
+        width: 81
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_6
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 511
+        width: 87
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_7
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 515
+        width: 87
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_8
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 505
+        width: 108
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 370
+        width: 90
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_10
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 369
+        width: 62
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_11
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 365
+        width: 85
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_12
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 363
+        width: 79
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_13
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 366
+        width: 74
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_14
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 365
+        width: 91
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_15
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 357
+        width: 80
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_16
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 339
+        width: 85
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_17
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 362
+        width: 151
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_18
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 95
+        width: 129
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_19
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 94
+        width: 129
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_20
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 203
+        width: 64
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_21
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 193
+        width: 134
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_22
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 202
+        width: 142
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_23
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 199
+        width: 104
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_24
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 111
+        width: 117
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_25
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 74
+        width: 116
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_26
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 73
+        width: 16
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_27
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 104
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_28
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 107
+        width: 49
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_29
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 104
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shipsheet_30
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 8
+        width: 80
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
