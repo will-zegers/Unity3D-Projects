@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OptionsController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\FadeIn.cs" Line="20" Column="51" />
+      <File FileName="Assets\Scripts\LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MusicManager.cs" Line="34" Column="31" />
+      <File FileName="Assets\Scripts\PlayerPrefsManager.cs" Line="32" Column="26" />
+      <File FileName="Assets\Test.cs" Line="9" Column="39" />
+      <File FileName="Assets\Scripts\OptionsController.cs" Line="22" Column="50" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
