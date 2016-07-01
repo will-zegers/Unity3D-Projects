@@ -5,7 +5,7 @@ public class MusicPlayer : MonoBehaviour {
 
 	static MusicPlayer instance = null;
 
-	public AudioClip startClip, gameClip, endClip;
+	public AudioClip bgMusic;
 
 	private AudioSource audioSource;
 
@@ -16,26 +16,9 @@ public class MusicPlayer : MonoBehaviour {
 			instance = this;
 			GameObject.DontDestroyOnLoad (gameObject);
 			audioSource = GetComponent<AudioSource>();
-			OnLevelWasLoaded(0);
+			audioSource.clip = bgMusic;
+			audioSource.loop = true;
+			audioSource.Play();
 		}
-	}
-
-	void OnLevelWasLoaded(int level) {
-		Debug.Log ("MusicPlayer: loaded level" + level);
-		audioSource.Stop ();
-
-		switch (level) {
-		case 0:
-			audioSource.clip = startClip;
-			break;
-		case 1:
-			audioSource.clip = gameClip;
-			break;
-		default:
-			audioSource.clip = endClip;
-			break;
-		}
-		audioSource.loop = true;
-		audioSource.Play ();
 	}
 }
