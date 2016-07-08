@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour {
 	public void Start() {
 		if (autoLoadNextLevelAfter > 0) {
 			Invoke ("LoadNextLevel", autoLoadNextLevelAfter);
-		} else {
+		} else if (autoLoadNextLevelAfter < 0) {
 			Debug.LogError("Level auot load disabled, use a positive number");
 		}
 	}

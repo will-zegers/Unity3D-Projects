@@ -46,12 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\Attackers\Attacker.cs" />
+     <Compile Include="Assets\Prefabs\Attackers\Fox.cs" />
+     <Compile Include="Assets\Prefabs\Attackers\Lizard.cs" />
+     <Compile Include="Assets\Prefabs\Defenders\Defender.cs" />
+     <Compile Include="Assets\Prefabs\Defenders\Shooter.cs" />
+     <Compile Include="Assets\Prefabs\Defenders\Stone.cs" />
+     <Compile Include="Assets\Prefabs\Projectiles\Projectile.cs" />
      <Compile Include="Assets\Scripts\FadeIn.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\OptionsController.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefsManager.cs" />
      <Compile Include="Assets\Scripts\SetStartVolume.cs" />
+     <Compile Include="Assets\Scripts\Shredder.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity4.7/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.2/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>
