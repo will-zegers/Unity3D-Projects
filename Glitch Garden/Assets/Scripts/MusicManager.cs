@@ -13,6 +13,7 @@ public class MusicManager : MonoBehaviour {
 	}
 	private void Start() {
 		audioSource = GetComponent<AudioSource> ();
+		audioSource.volume = PlayerPrefsManager.GetMasterVolume();
 	}
 	
 	// Update is called once per frame
@@ -22,7 +23,6 @@ public class MusicManager : MonoBehaviour {
 
 	public void OnLevelWasLoaded(int level) {
 		AudioClip levelTrack = levelMusicChangeArray [level];
-		Debug.Log ("Playing clip " + levelTrack);
 		if (levelTrack) {
 			audioSource.clip = levelMusicChangeArray[level];
 			audioSource.loop = true;

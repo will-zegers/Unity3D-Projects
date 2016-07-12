@@ -27,7 +27,5 @@ public class Lizard : MonoBehaviour {
 
 		attacker.Attack (obj);
 		animator.SetBool ("isAttacking", true);
-		
-		Debug.Log ("Lizard collided with " + collider);
 	}
 }

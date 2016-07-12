@@ -5,9 +5,12 @@ using System.Collections;
 [RequireComponent (typeof (Health))]
 public class Attacker : MonoBehaviour {
 
+	[Tooltip ("Average number of seconds between appearances")]
+	public float appearancePeriod;
+	public float damage = 10f;
+
 	private float currentSpeed;
 	private GameObject currentTarget;
-	public float damage = 10f;
 	private Animator animator;
 
 	// Use this for initialization
@@ -23,10 +26,6 @@ public class Attacker : MonoBehaviour {
 		transform.Translate (Vector3.left * currentSpeed * Time.deltaTime);
 	}
 
-	void OnTriggerEnter2D() {
-		Debug.Log (name+" trigger enter");
-	}
-
 	public void setCurrentSpeed(float speed) {
 		currentSpeed = speed;
 	}
@@ -36,7 +35,6 @@ public class Attacker : MonoBehaviour {
 		if (currentTarget) {
 			Health targetHealth = currentTarget.GetComponent<Health> ();
 			if (targetHealth) {
-				Debug.Log ("damage:" + damage);
 				targetHealth.DealDamage(damage);
 			}
 		}
