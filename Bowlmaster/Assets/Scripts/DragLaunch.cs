@@ -19,7 +19,7 @@ public class DragLaunch : MonoBehaviour {
 		float laneWidth = GameObject.Find ("Floor").transform.position.x;
 
 		if (!bowlingBall.inPlay) {
-			bowlingBall.transform.Translate (new Vector3 (xNudge, 0, 0));
+			bowlingBall.transform.Translate (new Vector3 (xNudge, 0, 0), Space.World);
 		}
 	}
 
@@ -35,8 +35,6 @@ public class DragLaunch : MonoBehaviour {
 		float deltaTime = Time.time - startTime;
 
 		Vector3 mouseVelocity = deltaPosition / deltaTime;
-		Debug.Log (deltaPosition);
-		Debug.Log (deltaTime);
 		bowlingBall.Launch (new Vector3(mouseVelocity.x, 0, mouseVelocity.y));
 	}
 }

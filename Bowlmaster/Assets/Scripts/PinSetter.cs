@@ -7,7 +7,8 @@ public class PinSetter : MonoBehaviour {
 	public int lastStandingCount = -1;
 	public Text pinCountText;
 	public BowlingBall bowlingBall;
-	public float distanceToRaise = 40f;
+	public GameObject pinSet;
+	public static float distanceToRaise = 20f;
 
 	private bool ballEnteredBox = false;
 	private float lastChangeTime;
@@ -25,40 +26,56 @@ public class PinSetter : MonoBehaviour {
 	}
 
 	public void RaisePins() {
+		Pin[] pinArray = GameObject.FindObjectsOfType<Pin> ();
 
+		foreach (Pin pin in pinArray) {
+			if (pin.IsStanding ()) {
+				pin.Raise ();
+			}
+		}
 	}
 
 	public void LowerPins() {
+		Pin[] pinArray = GameObject.FindObjectsOfType<Pin> ();
 
+		Debug.Log (pinArray.Length);
+		foreach (Pin pin in pinArray) {
+				pin.Lower ();
+		}
+		UpdatePinCount ();
 	}
 
-	private void Start() {
-		animator = GetComponent<Animator> ();
+	public void RenewPins() {
+		Instantiate (pinSet, new Vector3 (0, distanceToRaise, 1829), Quaternion.identity);
 	}
 
 	private void Update() {
+		if (ballEnteredBox) {
+			UpdatePinCount ();
+		}
+	}
+
+	private void UpdatePinCount() {
 		pinCountText.text = CountStanding ().ToString ();
 	}
 
-	private void CheckStanding() {
+	private void UpdateStandingCountAndSettle() {
 
 		int currentStandingCount = CountStanding ();
 
-		Debug.Log (lastStandingCount + " " + currentStandingCount);
 		if (lastStandingCount == currentStandingCount) {
 			PinsHaveSettled ();
 		} else {
 			lastStandingCount = currentStandingCount;
-			Invoke ("CheckStanding", 3);
+			Invoke ("UpdateStandingCountAndSettle", 3);
 		}
-		//Update the lastStandingCount
-		//Call PinsHaveSettled when they have
 	}
 
 	private void PinsHaveSettled() {
 		lastStandingCount = -1;
 		pinCountText.color = Color.green;
 		ballEnteredBox = false;
+		UpdatePinCount ();
 		bowlingBall.Reset ();
 	}
 
@@ -67,14 +84,8 @@ public class PinSetter : MonoBehaviour {
 			ballEnteredBox = true;
 			pinCountText.color = Color.red;
 			if (ballEnteredBox) {
-				CheckStanding ();
+				UpdateStandingCountAndSettle ();
 			}
-		}
-	}
-
-	private void OnTriggerExit(Collider collider) {
-		if (collider.gameObject.GetComponent<Pin>()) {
-			Destroy (collider.gameObject);
 		}
 	}
 }
