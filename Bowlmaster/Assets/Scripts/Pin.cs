@@ -3,20 +3,16 @@ using System.Collections;
 
 public class Pin : MonoBehaviour {
 
-	public static float xOffset = 270f;
-	public static float zOffset = 0f;
 	public float standingThreshold = 3f;
 
 	private Rigidbody rigidBody;
 
 	public bool IsStanding() {
 
-		float xTilt = transform.eulerAngles.x - xOffset;
+		float xTilt = transform.eulerAngles.x;
 		float zTilt = transform.eulerAngles.z;
 
-		Debug.Log (xTilt + " " + zTilt);
-
-		if (xTilt > standingThreshold || xTilt < -standingThreshold) {
+		if (xTilt > standingThreshold && xTilt < 360 - standingThreshold) {
 			return false;
 		}
 
@@ -34,6 +30,7 @@ public class Pin : MonoBehaviour {
 
 	public void Lower() {
 		transform.Translate (new Vector3 (0, -PinSetter.distanceToRaise, 0), Space.World);
+		transform.eulerAngles = Vector3.zero;
 		rigidBody.useGravity = true;
 	}
 

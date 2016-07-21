@@ -16,7 +16,7 @@ public class DragLaunch : MonoBehaviour {
 
 	public void MoveStart(float xNudge) {
 
-		float laneWidth = GameObject.Find ("Floor").transform.position.x;
+//		float laneWidth = GameObject.Find ("Floor").transform.position.x;
 
 		if (!bowlingBall.inPlay) {
 			bowlingBall.transform.Translate (new Vector3 (xNudge, 0, 0), Space.World);

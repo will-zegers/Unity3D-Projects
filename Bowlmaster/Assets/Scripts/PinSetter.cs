@@ -6,8 +6,8 @@ public class PinSetter : MonoBehaviour {
 
 	public int lastStandingCount = -1;
 	public Text pinCountText;
-	public BowlingBall bowlingBall;
 	public GameObject pinSet;
+	public BowlingBall bowlingBall;
 	public static float distanceToRaise = 20f;
 
 	private bool ballEnteredBox = false;
@@ -22,6 +22,7 @@ public class PinSetter : MonoBehaviour {
 		foreach (Pin pin in pinArray) {
 			if (pin.IsStanding()) {standingPinCount++;}
 		}
+
 		return standingPinCount;
 	}
 
@@ -42,7 +43,6 @@ public class PinSetter : MonoBehaviour {
 		foreach (Pin pin in pinArray) {
 				pin.Lower ();
 		}
-		UpdatePinCount ();
 	}
 
 	public void RenewPins() {
@@ -50,9 +50,7 @@ public class PinSetter : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (ballEnteredBox) {
 			UpdatePinCount ();
-		}
 	}
 
 	private void UpdatePinCount() {
