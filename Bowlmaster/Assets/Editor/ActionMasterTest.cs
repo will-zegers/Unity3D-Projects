@@ -40,7 +40,7 @@ public class ActionMasterTest {
 
 	[Test]
 	public void T04_Bowl2And8SpareReturnEndTurn() {
-		Assert.AreEqual (tidy, actionMaster.Bowl (2));
+		actionMaster.Bowl (2);
 		Assert.AreEqual (endTurn, actionMaster.Bowl (8));
 	}
 
@@ -53,37 +53,61 @@ public class ActionMasterTest {
 	}
 
 	[Test]
-	public void T06_NoStrikeLastFrameReturnsEndGame() {
-		for (int i = 1; i < 18; i++) {
-			actionMaster.Bowl (10);
-		}
-		actionMaster.Bowl (0);
-		Assert.AreEqual (endGame, actionMaster.Bowl (0));
-	}
-
-	[Test]
-	public void T07_SpareOnLastFrameReturnsReset() {
+	public void T06_StrikeOnPlay1InLastFrameReturnsReset() {
 		for (int i = 1; i < 19; i++) {
-			actionMaster.Bowl(0);
-		}
-		actionMaster.Bowl (2);
-		Assert.AreEqual(reset, actionMaster.Bowl(8));
-	}
-
-	[Test]
-	public void T08_StrikeOnLastFrameReturnsReset() {
-		for (int i = 0; i < 19; i++) {
 			actionMaster.Bowl (0);
 		}
 		Assert.AreEqual (reset, actionMaster.Bowl (10));
 	}
 
 	[Test]
-	public void T09_StrikeOnPlay1NoStrikeOnPlay2LastFrameReturnsReset() {
+	public void T07_StrikeOnPlay2InLastFrameReturnsReset() {
 		for (int i = 1; i < 19; i++) {
-			actionMaster.Bowl (0);
+			actionMaster.Bowl(0);
 		}
+		actionMaster.Bowl(2);
+		Assert.AreEqual (reset, actionMaster.Bowl(10));
+	}
+
+	[Test]
+	public void T08_NoSpareOnLastFrameReturnEndGame() {
+		for (int i = 1; i < 19; i++) {
+			actionMaster.Bowl (6);
+		}
+		actionMaster.Bowl (6);
+		Assert.AreEqual(endGame, actionMaster.Bowl (6));
+	}
+	[Test]
+	public void T09_SpareOnLastFrameReturnsReset() {
+		for (int i = 1; i < 19; i++) {
+			actionMaster.Bowl (6);
+		}
+		actionMaster.Bowl (2);
+		Assert.AreEqual (reset, actionMaster.Bowl (8));
+	}
+
+	[Test]
+	public void T10_StrikeOnPlay1NoStrikeOnPlay2InLastFrameReturnsTidy() {
+		for (int i = 1; i < 19; i++) {
+			actionMaster.Bowl(6);
+		}
+		actionMaster.Bowl(10);
+		Assert.AreEqual(tidy, actionMaster.Bowl(6));
+	}
+
+	[Test]
+	public void T11_StrikeOnPlay1ZeroOnPlay2InLastFrameReturnsTidy() {
+		for (int i = 1; i < 19; i++) {
+			actionMaster.Bowl(6);
+		}
+		actionMaster.Bowl(10);
+		Assert.AreEqual(tidy, actionMaster.Bowl(0));
+	}
+
+	[Test]
+	public void T12_StrikeOnLatterHalfOfFrameIncrementsBowlBy1() {
+		actionMaster.Bowl (0);
 		actionMaster.Bowl (10);
-		Assert.AreEqual (reset, actionMaster.Bowl (0));
+		Assert.AreEqual (tidy, actionMaster.Bowl (0));
 	}
 }

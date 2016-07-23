@@ -17,28 +17,61 @@ public class ActionMaster {
 		if (pins < 0 || pins > 10) {
 			throw new UnityException ("Invalid pins!");
 		}
-
+			
 		bowls [bowl] = pins;
+
+		// If player bowls the extra bowl, end the game.
 		if (bowl == 21) {
 			return Action.EndGame;
 		}
 
+		// If player knocks down all pins...
 		if (pins == 10) {
+
+			//...on last frame, they get an extra turn.
 			if (bowl == 19 || bowl == 20) {
 				bowl += 1;
 				return Action.Reset;
+
+			// ...otherwise its a regular strike and their turn ends.
 			} else {
-				bowl += 2;
+				if (bowl % 2 == 0) {
+					bowl += 1;
+				} else {
+					bowl += 2;
+				}
 				return Action.EndTurn;
 			}
 		}
 
-		if (bowl == 20 && pins + bowls[bowl-1] == 10) {
-			bowl += 1;
-			return Action.Reset;
-		} else if (bowl % 2 != 0) {
+		// If player is on last turn in the last frame (and hasn't knocked down 10 pins)...
+		if (bowl == 20) {
+
+			// ...and they didn't get a strike at the beginning of the frame...
+			if (bowls [19] != 10) {
+
+				// ...but they picked up the spare, reset the pins for bowl 21.
+				if (pins + bowls [19] == 10) {
+					bowl += 1;
+					return Action.Reset;
+				
+				// ...but didn't pick up the spare, the game ends for the player.
+				} else
+					return Action.EndGame;
+
+			// ...but they got a strike on the previous bowl, tidy the lane for the extra bowl.
+			} else {
+				bowl += 1;
+				return Action.Tidy;
+			}
+		}
+
+		// If it's mid frame, tidy the pins for the latter half of the frame.
+		if (bowl % 2 != 0) {
 			bowl += 1;
 			return Action.Tidy;
+		
+		// Otherwise, the frame is over and the player's turn ends
 		} else {
 			bowl += 1;
 			return Action.EndTurn;

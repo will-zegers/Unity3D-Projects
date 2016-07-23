@@ -13,6 +13,7 @@ public class PinSetter : MonoBehaviour {
 	private bool ballEnteredBox = false;
 	private float lastChangeTime;
 	private Animator animator;
+	private ActionMaster actionMaster;
 
 	public int CountStanding() {
 
@@ -49,6 +50,10 @@ public class PinSetter : MonoBehaviour {
 		Instantiate (pinSet, new Vector3 (0, distanceToRaise, 1829), Quaternion.identity);
 	}
 
+	private void Start() {
+		actionMaster = new ActionMaster();
+	}
+
 	private void Update() {
 			UpdatePinCount ();
 	}
@@ -62,6 +67,7 @@ public class PinSetter : MonoBehaviour {
 		int currentStandingCount = CountStanding ();
 
 		if (lastStandingCount == currentStandingCount) {
+			ActionMaster.Action action = actionMaster.Bowl (currentStandingCount);
 			PinsHaveSettled ();
 		} else {
 			lastStandingCount = currentStandingCount;
@@ -70,6 +76,7 @@ public class PinSetter : MonoBehaviour {
 	}
 
 	private void PinsHaveSettled() {
+
 		lastStandingCount = -1;
 		pinCountText.color = Color.green;
 		ballEnteredBox = false;
