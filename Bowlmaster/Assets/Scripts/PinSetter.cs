@@ -21,6 +21,7 @@ public class PinSetter : MonoBehaviour {
 		foreach (Pin pin in pinArray) {
 			if (pin.IsStanding ()) {
 				pin.Raise ();
+				pin.transform.rotation = Quaternion.Euler(Vector3.zero);
 			}
 		}
 	}

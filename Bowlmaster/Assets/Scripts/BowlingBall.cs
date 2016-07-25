@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BowlingBall : MonoBehaviour {
 
-	public Vector3 launchVelocity = new Vector3(0f, 0f, 0f);
+	public Vector3 launchVelocity = Vector3.zero;
 	public bool inPlay = false;
 
 	private Vector3 startPosition;
@@ -26,6 +26,7 @@ public class BowlingBall : MonoBehaviour {
 		rigidBody.useGravity      = false;
 
 		transform.position = startPosition;
+		transform.rotation = Quaternion.identity;
 
 		inPlay = false;
 	}

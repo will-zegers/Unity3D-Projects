@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ActionMaster {
 
@@ -7,12 +8,12 @@ public class ActionMaster {
 		Tidy,
 		Reset,
 		EndTurn,
-		EndGame
+		EndGame,
 	}
 	private int bowl = 1;
 	private int[] bowls = new int[22];
 
-	public Action Bowl(int pins) {
+	public Action Bowl(int pins) { // TODO make private
 
 		Debug.Log (pins);
 		if (pins < 0 || pins > 10) {
@@ -79,5 +80,15 @@ public class ActionMaster {
 		}
 			
 		throw new UnityException ("Not sure what action to return!");
+	}
+
+	public static Action NextAction (List<int> pinFalls) {
+
+		Action nextAction = new Action ();
+		ActionMaster actionMaster = new ActionMaster ();
+		foreach (int pinFall in pinFalls) {
+			nextAction = actionMaster.Bowl (pinFall);
+		}
+		return nextAction;
 	}
 }

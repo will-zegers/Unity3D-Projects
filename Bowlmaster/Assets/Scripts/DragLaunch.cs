@@ -35,6 +35,8 @@ public class DragLaunch : MonoBehaviour {
 		float deltaTime = Time.time - startTime;
 
 		Vector3 mouseVelocity = deltaPosition / deltaTime;
-		bowlingBall.Launch (new Vector3(mouseVelocity.x, 0, mouseVelocity.y));
+		if (!bowlingBall.inPlay) {
+			bowlingBall.Launch (new Vector3 (mouseVelocity.x, 0, mouseVelocity.y));
+		}
 	}
 }
