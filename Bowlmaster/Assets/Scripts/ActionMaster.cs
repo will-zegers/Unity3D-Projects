@@ -14,6 +14,7 @@ public class ActionMaster {
 
 	public Action Bowl(int pins) {
 
+		Debug.Log (pins);
 		if (pins < 0 || pins > 10) {
 			throw new UnityException ("Invalid pins!");
 		}
