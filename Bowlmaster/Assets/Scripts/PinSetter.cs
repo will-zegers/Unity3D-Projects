@@ -10,6 +10,7 @@ public class PinSetter : MonoBehaviour {
 	public BowlingBall bowlingBall;
 	public static float distanceToRaise = 20f;
 
+	private int lastSettledCount = 10;
 	private bool ballEnteredBox = false;
 	private float lastChangeTime;
 	private Animator animator;
@@ -39,8 +40,6 @@ public class PinSetter : MonoBehaviour {
 
 	public void LowerPins() {
 		Pin[] pinArray = GameObject.FindObjectsOfType<Pin> ();
-
-		Debug.Log (pinArray.Length);
 		foreach (Pin pin in pinArray) {
 				pin.Lower ();
 		}
@@ -48,10 +47,14 @@ public class PinSetter : MonoBehaviour {
 
 	public void RenewPins() {
 		Instantiate (pinSet, new Vector3 (0, distanceToRaise, 1829), Quaternion.identity);
+		Pin[] pinArray = GameObject.FindObjectsOfType<Pin> ();
+		Debug.Log (pinArray.Length);
 	}
 
 	private void Start() {
 		actionMaster = new ActionMaster();
+		animator = GetComponent<Animator> ();
+		Debug.Log (GameObject.FindObjectsOfType<Pin> ().Length);
 	}
 
 	private void Update() {
@@ -67,7 +70,19 @@ public class PinSetter : MonoBehaviour {
 		int currentStandingCount = CountStanding ();
 
 		if (lastStandingCount == currentStandingCount) {
-			ActionMaster.Action action = actionMaster.Bowl (currentStandingCount);
+			ActionMaster.Action action = actionMaster.Bowl (lastSettledCount - currentStandingCount);
+			if (action == ActionMaster.Action.Tidy) {
+				animator.SetTrigger ("tidyTrigger");
+			} else if (action == ActionMaster.Action.EndTurn) {
+				animator.SetTrigger ("resetTrigger");
+				lastSettledCount = 10;
+			} else if (action == ActionMaster.Action.Reset) {
+				animator.SetTrigger ("resetTrigger");
+				lastSettledCount = 10;
+			} else {
+				throw new UnityException ("Don't know how to handle action " + action);
+			}
+			lastSettledCount = currentStandingCount;
 			PinsHaveSettled ();
 		} else {
 			lastStandingCount = currentStandingCount;
