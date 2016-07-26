@@ -26,6 +26,7 @@ public class Pin : MonoBehaviour {
 	public void Raise() {
 		transform.Translate (new Vector3 (0, PinSetter.distanceToRaise, 0), Space.World);
 		rigidBody.useGravity = false;
+		transform.rotation = Quaternion.Euler(Vector3.zero);
 	}
 
 	public void Lower() {
