@@ -1,13 +1,18 @@
 ﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ActionMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DragLaunch.cs">
     <Files>
+      <File FileName="Assets\Scripts\ActionMaster.cs" Line="16" Column="35" />
+      <File FileName="Assets\Editor\ScoreDisplayTest.cs" Line="158" Column="55" />
+      <File FileName="Assets\Scripts\ScoreDisplay.cs" Line="26" Column="45" />
       <File FileName="Assets\Scripts\ScoreMaster.cs" Line="22" Column="19" />
-      <File FileName="Assets\Scripts\ScoreDisplay.cs" Line="21" Column="11" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="43" Column="37" />
-      <File FileName="Assets\Scripts\DragLaunch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BowlingBall.cs" Line="17" Column="1" />
-      <File FileName="Assets\Scripts\ActionMaster.cs" Line="16" Column="9" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\PinCounter.cs" Line="47" Column="1" />
+      <File FileName="Assets\Editor\ScoreMasterTest.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DragLaunch.cs" Line="34" Column="21" />
+      <File FileName="Assets\Scripts\BowlingBall.cs" Line="1" Column="1" />
+      <File FileName="Assets\Editor\ActionMasterTest.cs" Line="15" Column="9" />
+      <File FileName="Assets\START Pack\Scripts\ActionMaster2.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,7 +9,7 @@ public class ActionMaster {
 		Reset,
 		EndTurn,
 		EndGame,
-	}
+	};
 	private int bowl = 1;
 	private int[] bowls = new int[22];
 

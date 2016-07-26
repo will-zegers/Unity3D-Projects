@@ -50,7 +50,7 @@ public class ActionMasterTest {
 
 	[Test]
 	public void T05_ThirdPlayInLastFrameReturnsEndGame() {
-		for (int i = 1; i <= 21; i++) {
+		for (int i = 1; i <= 12; i++) {
 			pinFalls.Add (10);
 		}
 		Assert.AreEqual (endGame, ActionMaster.NextAction(pinFalls));

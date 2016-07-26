@@ -8,12 +8,25 @@ public class GameManager : MonoBehaviour {
 	private ScoreDisplay scoreDisplay;
 	private BowlingBall bowlingBall;
 	private PinSetter pinSetter;
-	private ActionMaster actionMaster;
-	private List<int> pins;
+	private List<int> rolls;
 
-	public void UpdateScore(int pinFall) {
-		pins.Add (pinFall);
-		GetAction ();
+	public void Bowl(int pinFall) {
+		rolls.Add (pinFall);
+		Debug.Log (rolls[0]);
+
+		ActionMaster.Action action = ActionMaster.NextAction (rolls);
+		if (action != ActionMaster.Action.EndGame) {
+			bowlingBall.Reset ();
+		}
+		pinSetter.PerformAction (action);
+
+		if (action == ActionMaster.Action.EndTurn || action == ActionMaster.Action.Reset) {
+			pinCounter.Reset ();
+		}
+
+		scoreDisplay.FillRolls(rolls);
+		scoreDisplay.FillFrames(ScoreMaster.ScoreCumulative(rolls));
+
 	}
 
 	// Use this for initialization
@@ -23,7 +36,7 @@ public class GameManager : MonoBehaviour {
 		pinSetter = GameObject.FindObjectOfType<PinSetter> ();
 		scoreDisplay = GameObject.FindObjectOfType<ScoreDisplay> ();
 
-		pins = new List<int> ();
+		rolls = new List<int> ();
 	}
 	
 	// Update is called once per frame
@@ -32,16 +45,5 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void GetAction() {
-		ActionMaster.Action action = ActionMaster.NextAction (pins);
-		pinSetter.PerformAction (action);
-
-		if (action == ActionMaster.Action.EndTurn || action == ActionMaster.Action.Reset) {
-			pinCounter.Reset ();
-		}
-
-		if (action != ActionMaster.Action.EndGame) {
-			scoreDisplay.FillRollCard (pins);
-			bowlingBall.Reset ();
-		}
 	}
 }

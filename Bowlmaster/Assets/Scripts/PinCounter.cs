@@ -43,7 +43,10 @@ public class PinCounter : MonoBehaviour {
 		standingText.color = Color.green;
 
 		UpdatePinCount ();
-		gameManager.UpdateScore (lastSettledCount - CountStanding());
+		int pinFall = lastSettledCount - CountStanding();
+		lastSettledCount = CountStanding ();
+
+		gameManager.Bowl (pinFall);
 	}
 
 	private void WaitForPinsToSettle() {

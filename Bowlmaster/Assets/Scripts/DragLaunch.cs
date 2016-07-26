@@ -16,9 +16,10 @@ public class DragLaunch : MonoBehaviour {
 
 	public void MoveStart(float xNudge) {
 
-//		float laneWidth = GameObject.Find ("Floor").transform.position.x;
+		float laneWidth = GameObject.Find ("Floor").transform.lossyScale.x;
+		bool IsBallInBounds = Mathf.Abs (bowlingBall.transform.position.x + xNudge) < laneWidth / 2;
 
-		if (!bowlingBall.inPlay) {
+		if (!bowlingBall.inPlay && IsBallInBounds) {
 			bowlingBall.transform.Translate (new Vector3 (xNudge, 0, 0), Space.World);
 		}
 	}
