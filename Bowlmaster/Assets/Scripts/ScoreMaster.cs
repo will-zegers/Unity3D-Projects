@@ -19,27 +19,26 @@ public class ScoreMaster : MonoBehaviour {
 
 	// Returns a list of individual frame scores, not cumulative
 	public static List<int> ScoreFrames (List<int> rolls) {
-		List<int> frameList = new List<int> ();
+		List<int> frames = new List<int> ();
 
-		for (int i = 0; i < rolls.Count && frameList.Count < 10; ) {
+		for (int i = 0; i < rolls.Count && frames.Count < 10; i++) {
 			if (i + 1 < rolls.Count) {
 				if (rolls [i] == 10) {
 					if (i + 2 < rolls.Count) {
-						frameList.Add (rolls [i] + rolls [i + 1] + rolls [i + 2]);
-						i += 1;
+						frames.Add (rolls [i] + rolls [i + 1] + rolls [i + 2]);
 					}
-				} else if (rolls[i] + rolls[i+1] == 10) {
+				} else if (rolls [i] + rolls [i + 1] == 10) {
 					if (i + 2 < rolls.Count) {
-						frameList.Add (rolls [i] + rolls [i + 1] + rolls [i + 2]);
-						i += 2;
+						frames.Add (rolls [i] + rolls [i + 1] + rolls [i + 2]);
+						i++;
 					}
 				} else {
-					frameList.Add (rolls [i] + rolls [i + 1]);
-					i += 2;
+					frames.Add (rolls [i] + rolls [i + 1]);
+					i++;
 				}
 			}
 		}
 
-		return frameList;
+		return frames;
 	}
 }

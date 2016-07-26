@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
 	private PinCounter pinCounter;
-//	public ScoreDisplay scoreDisplay;
+	private ScoreDisplay scoreDisplay;
 	private BowlingBall bowlingBall;
 	private PinSetter pinSetter;
 	private ActionMaster actionMaster;
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
 		pinCounter = GameObject.FindObjectOfType<PinCounter> ();
 		bowlingBall = GameObject.FindObjectOfType<BowlingBall> ();
 		pinSetter = GameObject.FindObjectOfType<PinSetter> ();
+		scoreDisplay = GameObject.FindObjectOfType<ScoreDisplay> ();
 
 		pins = new List<int> ();
 	}
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (action != ActionMaster.Action.EndGame) {
+			scoreDisplay.FillRollCard (pins);
 			bowlingBall.Reset ();
 		}
 	}
